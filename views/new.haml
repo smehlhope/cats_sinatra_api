@@ -1,0 +1,12 @@
+%h1 Add a Member to the Pride
+
+%form.form-horizontal{:action => "/cats", :method => "post"}
+	.form-group
+		%label{:for => "name"} Name:
+		%input#name.form-control{:placeholder => "Name", :name => "name", :type => "text"}
+	.form-group
+		%label{:for => "age"} Age:
+		%input#age.form-control{:placeholder => "Age", :name => "age", :type => "number"}	
+	%button.btn.btn-primary{:type => "submit"} Add Cat!
+
+%a{:href => "/cats"} Check out the pride's members.

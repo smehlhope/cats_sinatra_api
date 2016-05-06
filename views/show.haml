@@ -1,0 +1,19 @@
+%h1
+	Name: 
+	= @cat.name
+
+%h1
+	Age: 
+	= @cat.age
+
+%h1
+	Recruit # 
+	= @cat.id
+
+%a{:href => "/cats/#{@cat.id}/edit"} 
+	Edit
+	= @cat.name
+
+%p or
+
+%a{:href => "/cats"} Check out the pride's members.	

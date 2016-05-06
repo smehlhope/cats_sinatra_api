@@ -1,0 +1,11 @@
+%h1 Check Out the Pride's Members
+- unless @pride.empty?
+	%ul
+		- @pride.each do |cat|
+			%li 
+				%a{:href => "/cats/#{cat.id}"}= cat.name
+	%a{:href => "/cats/new"} Or Add a New Member
+- else
+	%p 
+		There are no members in this pride. 
+		%a{:href => "/cats/new"} Add a New Member

@@ -1,0 +1,19 @@
+%h1 Edit #{@cat.name}'s Status
+
+%form.form-horizontal{:action => "/cats/#{@cat.id}", :method => "post"}
+	%input#hidden{:name => "_method", :type => "hidden", :value => "patch"}/
+	.form-group
+		%label{:for => "name"} Name:
+		%input#name.form-control{:placeholder => "Name", :name => "name", :type => "text"}
+	.form-group
+		%label{:for => "age"} Age:
+		%input#age.form-control{:placeholder => "Age", :name => "age", :type => "number"}	
+	%button.btn.btn-primary{:type => "submit"} Update this cat!
+
+%p or	
+
+%form.form-horizontal{:action => "/cats/#{@cat.id}/delete", :method => "post"}
+	%input#hidden{:name => "_method", :type => "hidden", :value => "delete"}/
+	%button.btn.btn-danger{:type => "submit"} Remove this cat from the Pride
+
+%a{:href => "/cats"}  Check out the pride's members.
